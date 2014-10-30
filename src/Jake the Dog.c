@@ -49,7 +49,7 @@ void tick_handler(struct tm *tick_time, TimeUnits units_changed)
 {
 	static char buffer[] = "00:00"; // Allocate "long-lived" storage (required by TextLayer)
 
-	strftime(buffer, sizeof("00:00"), "%H:%M", tick_time); // Write the time to the buffer in a safe manner
+	strftime(buffer, sizeof("00:00"), "%l:%M", tick_time); // Write the time to the buffer in a safe manner
 
 	text_layer_set_text(g_text_time_layer, buffer); // Display the time in the text time layer
 
