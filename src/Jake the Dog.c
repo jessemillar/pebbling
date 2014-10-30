@@ -9,6 +9,38 @@ BitmapLayer *g_frame_layer;
 
 static int g_slogan_flash = 0;
 
+void tick_handler(struct tm *tick_time, TimeUnits units_changed)
+{
+	static char buffer[] = "00:00"; // Allocate "long-lived" storage (required by TextLayer)
+	// static char buffer[] = "00:00xx"; // The "xx" is required if we want am/pm to display
+	strftime(buffer, sizeof(buffer), "%H:%M", tick_time); // Write the time to the buffer in a safe manner
+	clock_copy_time_string(buffer, sizeof(buffer)); // Reformat the time to the user's preference
+	text_layer_set_text(g_text_time_layer, buffer); // Display the time in the text time layer
+
+	if (g_slogan_flash == 0)
+	{
+		text_layer_set_text(g_text_slogan_layer, "IT'S ADVENTURE TIME!");
+		g_slogan_flash = 1;
+	}
+	else
+	{
+		text_layer_set_text(g_text_slogan_layer, "");
+		g_slogan_flash = 0;
+	}
+}
+
+void populate_clock() // Initially populate the clock so the face doesn't start blank
+{
+	// Get a time structure so that the face doesn't start blank
+	struct tm *t;
+	time_t temp;
+	temp = time(NULL);
+	t = localtime(&temp);
+
+	// Manually call the tick handler when the window is loading
+	tick_handler(t, MINUTE_UNIT);
+}
+
 void window_load(Window *window)
 {
 	// Slogan styling
@@ -34,6 +66,8 @@ void window_load(Window *window)
 	// Add text last
 	layer_add_child(window_get_root_layer(window), text_layer_get_layer(g_text_slogan_layer)); // Load the text layer
 	layer_add_child(window_get_root_layer(window), text_layer_get_layer(g_text_time_layer)); // Load the text layer
+
+	populate_clock();
 }
 
 void window_unload(Window *window)
@@ -43,26 +77,6 @@ void window_unload(Window *window)
 
 	text_layer_destroy(g_text_slogan_layer);
 	text_layer_destroy(g_text_time_layer);
-}
-
-void tick_handler(struct tm *tick_time, TimeUnits units_changed)
-{
-	static char buffer[] = "00:00"; // Allocate "long-lived" storage (required by TextLayer)
-
-	strftime(buffer, sizeof("00:00"), "%l:%M", tick_time); // Write the time to the buffer in a safe manner
-
-	text_layer_set_text(g_text_time_layer, buffer); // Display the time in the text time layer
-
-	if (g_slogan_flash == 0)
-	{
-		text_layer_set_text(g_text_slogan_layer, "IT'S ADVENTURE TIME!");
-		g_slogan_flash = 1;
-	}
-	else
-	{
-		text_layer_set_text(g_text_slogan_layer, "");
-		g_slogan_flash = 0;
-	}
 }
 
 void init()

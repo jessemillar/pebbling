@@ -139,8 +139,6 @@ Discarded input sections
                 0x0000000000000000        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
  .text.click_recognizer_get_button_id
                 0x0000000000000000        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
- .text.clock_copy_time_string
-                0x0000000000000000        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
  .text.clock_is_24h_style
                 0x0000000000000000        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
  .text.cos_lookup
@@ -311,8 +309,6 @@ Discarded input sections
                 0x0000000000000000        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
  .text.light_enable_interaction
                 0x0000000000000000        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
- .text.localtime
-                0x0000000000000000        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
  .text.malloc   0x0000000000000000        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
  .text.memcpy   0x0000000000000000        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
  .text.memmove  0x0000000000000000        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
@@ -482,7 +478,6 @@ Discarded input sections
                 0x0000000000000000        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
  .text.tick_timer_service_unsubscribe
                 0x0000000000000000        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
- .text.time     0x0000000000000000        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
  .text.time_ms  0x0000000000000000        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
  .text.vibes_cancel
                 0x0000000000000000        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
@@ -696,162 +691,173 @@ LOAD /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-
  .pbl_header    0x0000000000000000       0x82 appinfo.auto.c.9.o
                 0x0000000000000000                __pbl_app_info
 
-.text           0x0000000000000084      0x416
+.text           0x0000000000000084      0x462
  *(.text)
  .text          0x0000000000000084       0x14 /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
  *(.text.*)
  .text.window_unload
                 0x0000000000000098       0x48 src/Jake the Dog.c.9.o
                 0x0000000000000098                window_unload
- .text.window_load
-                0x00000000000000e0      0x128 src/Jake the Dog.c.9.o
-                0x00000000000000e0                window_load
  .text.tick_handler
-                0x0000000000000208       0x6c src/Jake the Dog.c.9.o
-                0x0000000000000208                tick_handler
- .text.init     0x0000000000000274       0x64 src/Jake the Dog.c.9.o
-                0x0000000000000274                init
- .text.deinit   0x00000000000002d8       0x18 src/Jake the Dog.c.9.o
-                0x00000000000002d8                deinit
+                0x00000000000000e0       0x74 src/Jake the Dog.c.9.o
+                0x00000000000000e0                tick_handler
+ .text.populate_clock
+                0x0000000000000154       0x1c src/Jake the Dog.c.9.o
+                0x0000000000000154                populate_clock
+ .text.window_load
+                0x0000000000000170      0x12c src/Jake the Dog.c.9.o
+                0x0000000000000170                window_load
+ .text.init     0x000000000000029c       0x64 src/Jake the Dog.c.9.o
+                0x000000000000029c                init
+ .text.deinit   0x0000000000000300       0x18 src/Jake the Dog.c.9.o
+                0x0000000000000300                deinit
  .text.startup.main
-                0x00000000000002f0       0x12 src/Jake the Dog.c.9.o
-                0x00000000000002f0                main
- *fill*         0x0000000000000302        0x2 
+                0x0000000000000318       0x12 src/Jake the Dog.c.9.o
+                0x0000000000000318                main
+ *fill*         0x000000000000032a        0x2 
  .text.app_event_loop
-                0x0000000000000304        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x0000000000000304                app_event_loop
+                0x000000000000032c        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x000000000000032c                app_event_loop
  .text.bitmap_layer_create
-                0x0000000000000310        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x0000000000000310                bitmap_layer_create
+                0x0000000000000338        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x0000000000000338                bitmap_layer_create
  .text.bitmap_layer_destroy
-                0x000000000000031c        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x000000000000031c                bitmap_layer_destroy
+                0x0000000000000344        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x0000000000000344                bitmap_layer_destroy
  .text.bitmap_layer_get_layer
-                0x0000000000000328        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x0000000000000328                bitmap_layer_get_layer
+                0x0000000000000350        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x0000000000000350                bitmap_layer_get_layer
  .text.bitmap_layer_set_bitmap
-                0x0000000000000334        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x0000000000000334                bitmap_layer_set_bitmap
+                0x000000000000035c        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x000000000000035c                bitmap_layer_set_bitmap
+ .text.clock_copy_time_string
+                0x0000000000000368        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x0000000000000368                clock_copy_time_string
  .text.fonts_get_system_font
-                0x0000000000000340        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x0000000000000340                fonts_get_system_font
+                0x0000000000000374        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x0000000000000374                fonts_get_system_font
  .text.gbitmap_create_with_resource
-                0x000000000000034c        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x000000000000034c                gbitmap_create_with_resource
+                0x0000000000000380        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x0000000000000380                gbitmap_create_with_resource
  .text.gbitmap_destroy
-                0x0000000000000358        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x0000000000000358                gbitmap_destroy
+                0x000000000000038c        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x000000000000038c                gbitmap_destroy
  .text.layer_add_child
-                0x0000000000000364        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x0000000000000364                layer_add_child
- .text.memset   0x0000000000000370        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x0000000000000370                memset
+                0x0000000000000398        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x0000000000000398                layer_add_child
+ .text.localtime
+                0x00000000000003a4        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x00000000000003a4                localtime
+ .text.memset   0x00000000000003b0        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x00000000000003b0                memset
  .text.strftime
-                0x000000000000037c        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x000000000000037c                strftime
+                0x00000000000003bc        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x00000000000003bc                strftime
  .text.text_layer_create
-                0x0000000000000388        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x0000000000000388                text_layer_create
+                0x00000000000003c8        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x00000000000003c8                text_layer_create
  .text.text_layer_destroy
-                0x0000000000000394        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x0000000000000394                text_layer_destroy
+                0x00000000000003d4        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x00000000000003d4                text_layer_destroy
  .text.text_layer_get_layer
-                0x00000000000003a0        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x00000000000003a0                text_layer_get_layer
+                0x00000000000003e0        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x00000000000003e0                text_layer_get_layer
  .text.text_layer_set_background_color
-                0x00000000000003ac        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x00000000000003ac                text_layer_set_background_color
+                0x00000000000003ec        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x00000000000003ec                text_layer_set_background_color
  .text.text_layer_set_font
-                0x00000000000003b8        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x00000000000003b8                text_layer_set_font
+                0x00000000000003f8        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x00000000000003f8                text_layer_set_font
  .text.text_layer_set_text
-                0x00000000000003c4        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x00000000000003c4                text_layer_set_text
+                0x0000000000000404        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x0000000000000404                text_layer_set_text
  .text.text_layer_set_text_alignment
-                0x00000000000003d0        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x00000000000003d0                text_layer_set_text_alignment
+                0x0000000000000410        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x0000000000000410                text_layer_set_text_alignment
  .text.text_layer_set_text_color
-                0x00000000000003dc        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x00000000000003dc                text_layer_set_text_color
+                0x000000000000041c        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x000000000000041c                text_layer_set_text_color
  .text.tick_timer_service_subscribe
-                0x00000000000003e8        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x00000000000003e8                tick_timer_service_subscribe
+                0x0000000000000428        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x0000000000000428                tick_timer_service_subscribe
+ .text.time     0x0000000000000434        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x0000000000000434                time
  .text.window_create
-                0x00000000000003f4        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x00000000000003f4                window_create
+                0x0000000000000440        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x0000000000000440                window_create
  .text.window_destroy
-                0x0000000000000400        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x0000000000000400                window_destroy
+                0x000000000000044c        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x000000000000044c                window_destroy
  .text.window_get_root_layer
-                0x000000000000040c        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x000000000000040c                window_get_root_layer
+                0x0000000000000458        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x0000000000000458                window_get_root_layer
  .text.window_set_window_handlers
-                0x0000000000000418        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x0000000000000418                window_set_window_handlers
+                0x0000000000000464        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x0000000000000464                window_set_window_handlers
  .text.window_stack_push
-                0x0000000000000424        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x0000000000000424                window_stack_push
+                0x0000000000000470        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x0000000000000470                window_stack_push
  *(.rodata)
- .rodata        0x0000000000000430       0x18 src/Jake the Dog.c.9.o
+ .rodata        0x000000000000047c       0x18 src/Jake the Dog.c.9.o
  *(.rodata*)
  .rodata.str1.1
-                0x0000000000000448       0x52 src/Jake the Dog.c.9.o
+                0x0000000000000494       0x52 src/Jake the Dog.c.9.o
                                          0x53 (size before relaxing)
 
-.glue_7         0x000000000000049c        0x0
+.glue_7         0x00000000000004e8        0x0
  .glue_7        0x0000000000000000        0x0 linker stubs
 
-.glue_7t        0x000000000000049c        0x0
+.glue_7t        0x00000000000004e8        0x0
  .glue_7t       0x0000000000000000        0x0 linker stubs
 
-.vfp11_veneer   0x000000000000049c        0x0
+.vfp11_veneer   0x00000000000004e8        0x0
  .vfp11_veneer  0x0000000000000000        0x0 linker stubs
 
-.v4_bx          0x000000000000049c        0x0
+.v4_bx          0x00000000000004e8        0x0
  .v4_bx         0x0000000000000000        0x0 linker stubs
 
-.iplt           0x000000000000049c        0x0
+.iplt           0x00000000000004e8        0x0
  .iplt          0x0000000000000000        0x0 /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.rel.dyn        0x000000000000049c        0x0
+.rel.dyn        0x00000000000004e8        0x0
  .rel.iplt      0x0000000000000000        0x0 /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
  .rel.got       0x0000000000000000        0x0 /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.data           0x000000000000049c        0xa
+.data           0x00000000000004e8        0xa
  *(.data)
- .data          0x000000000000049c        0x0 /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crti.o
- .data          0x000000000000049c        0x4 /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
-                0x000000000000049c                __dso_handle
- .data          0x00000000000004a0        0x0 src/Jake the Dog.c.9.o
- .data          0x00000000000004a0        0x0 appinfo.auto.c.9.o
- .data          0x00000000000004a0        0x0 /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
- .data          0x00000000000004a0        0x0 /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
- .data          0x00000000000004a0        0x0 /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtn.o
+ .data          0x00000000000004e8        0x0 /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crti.o
+ .data          0x00000000000004e8        0x4 /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
+                0x00000000000004e8                __dso_handle
+ .data          0x00000000000004ec        0x0 src/Jake the Dog.c.9.o
+ .data          0x00000000000004ec        0x0 appinfo.auto.c.9.o
+ .data          0x00000000000004ec        0x0 /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+ .data          0x00000000000004ec        0x0 /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
+ .data          0x00000000000004ec        0x0 /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtn.o
  *(.data.*)
- .data.buffer.6631
-                0x00000000000004a0        0x6 src/Jake the Dog.c.9.o
+ .data.buffer.6622
+                0x00000000000004ec        0x6 src/Jake the Dog.c.9.o
 
-.igot.plt       0x00000000000004a8        0x0
+.igot.plt       0x00000000000004f4        0x0
  .igot.plt      0x0000000000000000        0x0 /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.got            0x00000000000004a8       0x14
- .got           0x00000000000004a8       0x14 /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
+.got            0x00000000000004f4       0x14
+ .got           0x00000000000004f4       0x14 /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.got.plt        0x00000000000004bc        0xc
- .got.plt       0x00000000000004bc        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
-                0x00000000000004bc                _GLOBAL_OFFSET_TABLE_
+.got.plt        0x0000000000000508        0xc
+ .got.plt       0x0000000000000508        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
+                0x0000000000000508                _GLOBAL_OFFSET_TABLE_
 
-.bss            0x00000000000004c8       0x18
+.bss            0x0000000000000514       0x18
  *(.bss)
  *(.bss.*)
  .bss.g_slogan_flash
-                0x00000000000004c8        0x4 src/Jake the Dog.c.9.o
- COMMON         0x00000000000004cc       0x14 src/Jake the Dog.c.9.o
-                0x00000000000004cc                g_window
-                0x00000000000004d0                g_text_time_layer
-                0x00000000000004d4                g_frame_bitmap
-                0x00000000000004d8                g_text_slogan_layer
-                0x00000000000004dc                g_frame_layer
+                0x0000000000000514        0x4 src/Jake the Dog.c.9.o
+ COMMON         0x0000000000000518       0x14 src/Jake the Dog.c.9.o
+                0x0000000000000518                g_window
+                0x000000000000051c                g_text_time_layer
+                0x0000000000000520                g_frame_bitmap
+                0x0000000000000524                g_text_slogan_layer
+                0x0000000000000528                g_frame_layer
 
 DISCARD
  libc.a(*)
@@ -884,35 +890,35 @@ OUTPUT(/Users/Jesse/Dropbox/Projects/Pebble/Jake-the-Dog/build/pebble-app.elf el
  .comment       0x0000000000000000       0x4f appinfo.auto.c.9.o
  .comment       0x0000000000000000       0x4f /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
 
-.debug_info     0x0000000000000000      0xe65
- .debug_info    0x0000000000000000      0xb2a src/Jake the Dog.c.9.o
- .debug_info    0x0000000000000b2a      0x33b appinfo.auto.c.9.o
+.debug_info     0x0000000000000000      0xf58
+ .debug_info    0x0000000000000000      0xc1d src/Jake the Dog.c.9.o
+ .debug_info    0x0000000000000c1d      0x33b appinfo.auto.c.9.o
 
-.debug_abbrev   0x0000000000000000      0x3a8
- .debug_abbrev  0x0000000000000000      0x30a src/Jake the Dog.c.9.o
- .debug_abbrev  0x000000000000030a       0x9e appinfo.auto.c.9.o
+.debug_abbrev   0x0000000000000000      0x3c0
+ .debug_abbrev  0x0000000000000000      0x322 src/Jake the Dog.c.9.o
+ .debug_abbrev  0x0000000000000322       0x9e appinfo.auto.c.9.o
 
-.debug_loc      0x0000000000000000      0x144
- .debug_loc     0x0000000000000000      0x144 src/Jake the Dog.c.9.o
+.debug_loc      0x0000000000000000      0x164
+ .debug_loc     0x0000000000000000      0x164 src/Jake the Dog.c.9.o
 
-.debug_aranges  0x0000000000000000       0x60
+.debug_aranges  0x0000000000000000       0x68
  .debug_aranges
-                0x0000000000000000       0x48 src/Jake the Dog.c.9.o
+                0x0000000000000000       0x50 src/Jake the Dog.c.9.o
  .debug_aranges
-                0x0000000000000048       0x18 appinfo.auto.c.9.o
+                0x0000000000000050       0x18 appinfo.auto.c.9.o
 
-.debug_ranges   0x0000000000000000       0x68
- .debug_ranges  0x0000000000000000       0x68 src/Jake the Dog.c.9.o
+.debug_ranges   0x0000000000000000       0x70
+ .debug_ranges  0x0000000000000000       0x70 src/Jake the Dog.c.9.o
 
-.debug_line     0x0000000000000000      0x38e
- .debug_line    0x0000000000000000      0x272 src/Jake the Dog.c.9.o
- .debug_line    0x0000000000000272      0x11c appinfo.auto.c.9.o
+.debug_line     0x0000000000000000      0x429
+ .debug_line    0x0000000000000000      0x30d src/Jake the Dog.c.9.o
+ .debug_line    0x000000000000030d      0x11c appinfo.auto.c.9.o
 
-.debug_str      0x0000000000000000      0x7b3
- .debug_str     0x0000000000000000      0x5a7 src/Jake the Dog.c.9.o
-                                        0x61f (size before relaxing)
- .debug_str     0x00000000000005a7      0x20c appinfo.auto.c.9.o
+.debug_str      0x0000000000000000      0x7ef
+ .debug_str     0x0000000000000000      0x5e3 src/Jake the Dog.c.9.o
+                                        0x660 (size before relaxing)
+ .debug_str     0x00000000000005e3      0x20c appinfo.auto.c.9.o
                                         0x359 (size before relaxing)
 
-.debug_frame    0x0000000000000000       0xb0
- .debug_frame   0x0000000000000000       0xb0 src/Jake the Dog.c.9.o
+.debug_frame    0x0000000000000000       0xcc
+ .debug_frame   0x0000000000000000       0xcc src/Jake the Dog.c.9.o
