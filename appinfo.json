@@ -1,0 +1,29 @@
+{
+  "uuid": "02a18ce9-ff79-4f70-9ec7-fbbbcbf4d9ca",
+  "shortName": "Baymax",
+  "longName": "Baymax",
+  "companyName": "Jesse Millar",
+  "versionCode": 1,
+  "versionLabel": "1.0",
+  "watchapp": {
+    "watchface": true
+  },
+  "appKeys": {
+    "dummy": 0
+  },
+  "resources": {
+    "media": [
+      {
+        "menuIcon": true,
+        "type": "png",
+        "name": "IMAGE_ICON",
+        "file": "images/icon.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_BAYMAX",
+        "file": "images/baymax.png"
+      }
+    ]
+  }
+}
