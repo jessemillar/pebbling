@@ -2,14 +2,12 @@
 
 Window *g_window;
 
-TextLayer *debug_layer;
-
 TextLayer *time_layer;
 GBitmap *bitmap;
 GBitmap *temp_bitmap;
 BitmapLayer *face_layer;
 
-static int fps = 15; // Time between frames of the animation
+static int fps = 25; // Time between frames of the animation
 
 static int second_count = 0;
 static int blink_interval = 3; // Blink after this many seconds
@@ -18,28 +16,15 @@ static bool animating = false;
 static bool eyes_closing = true; // Since closing is the first half of the animation
 
 static int current_frame = 0;
-static int framecount = 14; // Apparently I can't set the size of an array with a variable
-static int frames[14] = {
+static int framecount = 3; // Apparently I can't set the size of an array with a variable
+static int frames[3] = {
 	RESOURCE_ID_IMAGE_BAYMAX_1,
 	RESOURCE_ID_IMAGE_BAYMAX_2,
-	RESOURCE_ID_IMAGE_BAYMAX_3,
-	RESOURCE_ID_IMAGE_BAYMAX_4,
-	RESOURCE_ID_IMAGE_BAYMAX_5,
-	RESOURCE_ID_IMAGE_BAYMAX_6,
-	RESOURCE_ID_IMAGE_BAYMAX_7,
-	RESOURCE_ID_IMAGE_BAYMAX_8,
-	RESOURCE_ID_IMAGE_BAYMAX_9,
-	RESOURCE_ID_IMAGE_BAYMAX_10,
-	RESOURCE_ID_IMAGE_BAYMAX_11,
-	RESOURCE_ID_IMAGE_BAYMAX_12,
-	RESOURCE_ID_IMAGE_BAYMAX_13,
-	RESOURCE_ID_IMAGE_BAYMAX_14
+	RESOURCE_ID_IMAGE_BAYMAX_3
 };
 
 void animate()
 {
-	text_layer_set_text(debug_layer, current_frame); // Debug
-
 	if (animating == true)
 	{
 		if (eyes_closing)
@@ -117,13 +102,6 @@ void populate_clock() // Initially populate the clock so the face doesn't start 
 
 void window_load(Window *window)
 {
-	// Debug styling
-	debug_layer = text_layer_create(GRect(0, 10, 75, 30));
-	text_layer_set_background_color(debug_layer, GColorClear);
-	text_layer_set_text_color(debug_layer, GColorBlack);
-	text_layer_set_font(debug_layer, fonts_get_system_font(FONT_KEY_BITHAM_30_BLACK));
-	// text_layer_set_text_alignment(debug_layer, GTextAlignmentCenter);
-
 	// Time styling
 	time_layer = text_layer_create(GRect(0, 112, 144, 30));
 	text_layer_set_background_color(time_layer, GColorClear);
@@ -149,7 +127,6 @@ void window_unload(Window *window)
 	gbitmap_destroy(temp_bitmap);
 	bitmap_layer_destroy(face_layer);
 
-	text_layer_destroy(debug_layer);
 	text_layer_destroy(time_layer);
 }
 

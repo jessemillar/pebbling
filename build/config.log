@@ -1,13 +1,13 @@
-# project  configured on Sun Nov  9 20:05:41 2014 by
+# project  configured on Mon Nov 10 09:54:56 2014 by
 # waf 1.7.11 (abi 98, python 20706f0 on darwin)
-# using /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/waf configure build
+# using /Users/jessemillar/pebble-dev/PebbleSDK-2.7/Pebble/waf configure build
 #
 ----------------------------------------
 Setting top to
-/Users/Jesse/Dropbox/Projects/Pebble/Baymax
+/Users/jessemillar/Desktop/Baymax
 ----------------------------------------
 Setting out to
-/Users/Jesse/Dropbox/Projects/Pebble/Baymax/build
+/Users/jessemillar/Desktop/Baymax/build
 ----------------------------------------
 Checking for program gcc,cc
 arm-none-eabi-gcc
