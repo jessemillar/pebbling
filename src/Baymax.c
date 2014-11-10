@@ -3,25 +3,38 @@
 Window *g_window;
 
 TextLayer *time_layer;
-GBitmap *bitmap;
-GBitmap *temp_bitmap;
 BitmapLayer *face_layer;
 
 static int fps = 25; // Time between frames of the animation
 
 static int second_count = 0;
-static int blink_interval = 3; // Blink after this many seconds
+static int blink_interval = 15; // Blink after this many seconds
 
-static bool animating = false;
+static bool animating = true; // Animate when the face opens
 static bool eyes_closing = true; // Since closing is the first half of the animation
 
-static int current_frame = 0;
-static int framecount = 3; // Apparently I can't set the size of an array with a variable
-static int frames[3] = {
-	RESOURCE_ID_IMAGE_BAYMAX_1,
-	RESOURCE_ID_IMAGE_BAYMAX_2,
-	RESOURCE_ID_IMAGE_BAYMAX_3
-};
+static int current_frame = 1;
+static int frame_count = 3;
+
+GBitmap *frame_1;
+GBitmap *frame_2;
+GBitmap *frame_3;
+
+void display_frame() // Do things manually to keep bitmaps in memory
+{
+	if (current_frame == 1)
+	{
+		bitmap_layer_set_bitmap(face_layer, frame_1);
+	}
+	else if (current_frame == 2)
+	{
+		bitmap_layer_set_bitmap(face_layer, frame_2);
+	}
+	else if (current_frame == 3)
+	{
+		bitmap_layer_set_bitmap(face_layer, frame_3);
+	}
+}
 
 void animate()
 {
@@ -29,7 +42,7 @@ void animate()
 	{
 		if (eyes_closing)
 		{
-			if (current_frame < framecount - 1)
+			if (current_frame < frame_count)
 			{
 				current_frame++;
 			}
@@ -52,9 +65,7 @@ void animate()
 			}
 		}
 
-		// Show the new frame
-		temp_bitmap = gbitmap_create_with_resource(frames[current_frame]);
-		bitmap_layer_set_bitmap(face_layer, temp_bitmap);
+		display_frame(); // Show the new frame
 
 		if (animating)
 		{
@@ -96,8 +107,9 @@ void populate_clock() // Initially populate the clock so the face doesn't start 
 	temp = time(NULL);
 	t = localtime(&temp);
 
-	// Manually call the tick handler when the window is loading
-	tick_handler(t, MINUTE_UNIT);
+	tick_handler(t, MINUTE_UNIT); // Manually call the tick handler when the window is loading
+
+	animate(); // Manually call the animate function to blink on face launch
 }
 
 void window_load(Window *window)
@@ -109,10 +121,14 @@ void window_load(Window *window)
 	text_layer_set_font(time_layer, fonts_get_system_font(FONT_KEY_BITHAM_30_BLACK));
 	text_layer_set_text_alignment(time_layer, GTextAlignmentCenter);
 
+	// Initialize the bitmaps
+	frame_1 = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_BAYMAX_1);
+	frame_2 = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_BAYMAX_2);
+	frame_3 = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_BAYMAX_3);
+
 	// Bitmap styling
-	bitmap = gbitmap_create_with_resource(frames[0]); // Start on the first frame
 	face_layer = bitmap_layer_create(GRect(0, 0, 144, 168));
-	bitmap_layer_set_bitmap(face_layer, bitmap);
+	bitmap_layer_set_bitmap(face_layer, frame_1);
 	layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(face_layer));
 
 	// Add text last
@@ -123,8 +139,6 @@ void window_load(Window *window)
 
 void window_unload(Window *window)
 {
-	gbitmap_destroy(bitmap);
-	gbitmap_destroy(temp_bitmap);
 	bitmap_layer_destroy(face_layer);
 
 	text_layer_destroy(time_layer);
