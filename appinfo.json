@@ -21,8 +21,73 @@
       },
       {
         "type": "png",
-        "name": "IMAGE_BAYMAX",
-        "file": "images/baymax.png"
+        "name": "IMAGE_BAYMAX_1",
+        "file": "images/baymax_1.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_BAYMAX_2",
+        "file": "images/baymax_2.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_BAYMAX_3",
+        "file": "images/baymax_3.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_BAYMAX_4",
+        "file": "images/baymax_4.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_BAYMAX_5",
+        "file": "images/baymax_5.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_BAYMAX_6",
+        "file": "images/baymax_6.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_BAYMAX_7",
+        "file": "images/baymax_7.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_BAYMAX_8",
+        "file": "images/baymax_8.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_BAYMAX_9",
+        "file": "images/baymax_9.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_BAYMAX_10",
+        "file": "images/baymax_10.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_BAYMAX_11",
+        "file": "images/baymax_11.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_BAYMAX_12",
+        "file": "images/baymax_12.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_BAYMAX_13",
+        "file": "images/baymax_13.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_BAYMAX_14",
+        "file": "images/baymax_14.png"
       }
     ]
   }
