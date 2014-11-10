@@ -5,7 +5,7 @@ Window *g_window;
 TextLayer *time_layer;
 BitmapLayer *face_layer;
 
-static int fps = 20; // Time between frames of the animation
+static int fps = 22; // Time between frames of the animation
 
 static int second_count = 0;
 static int blink_interval = 10; // Blink after this many seconds
