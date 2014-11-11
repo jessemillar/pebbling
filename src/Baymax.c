@@ -5,10 +5,10 @@ Window *g_window;
 TextLayer *time_layer;
 BitmapLayer *face_layer;
 
-static int fps = 22; // Time between frames of the animation
+static int fps = 25; // Time between frames of the animation
 
 static int second_count = 0;
-static int blink_interval = 10; // Blink after this many seconds
+static int blink_interval = 60; // Blink after this many seconds
 
 static bool animating = false;
 static bool eyes_closing = true; // Since closing is the first half of the animation
