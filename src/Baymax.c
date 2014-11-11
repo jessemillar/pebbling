@@ -16,7 +16,7 @@ static bool eyes_closing = true; // Since closing is the first half of the anima
 static int current_frame = 1;
 static int frame_count = 3;
 
-static int charge_level = 100; // Pretend we're full at the beginning
+static int charge_level;
 static int low_battery_level = 20; // The percent at which we consider the battery low
 
 GBitmap *frame_1;
@@ -181,6 +181,12 @@ void window_load(Window *window)
 void window_unload(Window *window)
 {
 	bitmap_layer_destroy(face_layer);
+	gbitmap_destroy(frame_1);
+	gbitmap_destroy(frame_2);
+	gbitmap_destroy(frame_3);
+	gbitmap_destroy(frame_low_1);
+	gbitmap_destroy(frame_low_2);
+	gbitmap_destroy(frame_low_3);
 
 	text_layer_destroy(time_layer);
 }
