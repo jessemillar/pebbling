@@ -31,11 +31,6 @@
       },
       {
         "type": "png",
-        "name": "IMAGE_BAYMAX_3",
-        "file": "images/baymax_3.png"
-      },
-      {
-        "type": "png",
         "name": "IMAGE_BAYMAX_LOW_1",
         "file": "images/baymax_low_1.png"
       },
@@ -43,11 +38,6 @@
         "type": "png",
         "name": "IMAGE_BAYMAX_LOW_2",
         "file": "images/baymax_low_2.png"
-      },
-      {
-        "type": "png",
-        "name": "IMAGE_BAYMAX_LOW_3",
-        "file": "images/baymax_low_3.png"
       }
     ]
   }

@@ -5,26 +5,21 @@ Window *g_window;
 TextLayer *time_layer;
 BitmapLayer *face_layer;
 
-static int fps = 25; // Time between frames of the animation
-
-static int second_count = 0;
-static int blink_interval = 60; // Blink after this many seconds
+static int fps = 15; // Time between frames of the animation
 
 static bool animating = false;
 static bool eyes_closing = true; // Since closing is the first half of the animation
 
 static int current_frame = 1;
-static int frame_count = 3;
+static int frame_count = 2;
 
 static int charge_level;
 static int low_battery_level = 20; // The percent at which we consider the battery low
 
 GBitmap *frame_1;
 GBitmap *frame_2;
-GBitmap *frame_3;
 GBitmap *frame_low_1;
 GBitmap *frame_low_2;
-GBitmap *frame_low_3;
 
 void display_frame() // Do things manually to keep bitmaps in memory
 {
@@ -38,10 +33,6 @@ void display_frame() // Do things manually to keep bitmaps in memory
 		{
 			bitmap_layer_set_bitmap(face_layer, frame_2);
 		}
-		else if (current_frame == 3)
-		{
-			bitmap_layer_set_bitmap(face_layer, frame_3);
-		}
 	}
 	else
 	{
@@ -52,10 +43,6 @@ void display_frame() // Do things manually to keep bitmaps in memory
 		else if (current_frame == 2)
 		{
 			bitmap_layer_set_bitmap(face_layer, frame_low_2);
-		}
-		else if (current_frame == 3)
-		{
-			bitmap_layer_set_bitmap(face_layer, frame_low_3);
 		}
 	}
 }
@@ -98,16 +85,6 @@ void animate()
 	}
 }
 
-void blink()
-{
-	if (second_count == blink_interval)
-	{
-		second_count = 0;
-		animating = true;
-		animate();
-	}
-}
-
 void tick_handler(struct tm *tick_time, TimeUnits units_changed)
 {
 	static char buffer[] = "00:00"; // Allocate "long-lived" storage (required by TextLayer)
@@ -116,11 +93,8 @@ void tick_handler(struct tm *tick_time, TimeUnits units_changed)
 	clock_copy_time_string(buffer, sizeof(buffer)); // Reformat the time to the user's preference
 	text_layer_set_text(time_layer, buffer); // Display the time in the text time layer
 
-	if (second_count < blink_interval)
-	{
-		second_count++;
-		blink();
-	}
+	animating = true;
+	animate();
 }
 
 void populate_clock() // Initially populate the clock so the face doesn't start blank
@@ -155,10 +129,8 @@ void window_load(Window *window)
 	// Initialize the bitmaps
 	frame_1 = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_BAYMAX_1);
 	frame_2 = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_BAYMAX_2);
-	frame_3 = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_BAYMAX_3);
 	frame_low_1 = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_BAYMAX_LOW_1);
 	frame_low_2 = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_BAYMAX_LOW_2);
-	frame_low_3 = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_BAYMAX_LOW_3);
 
 	// Bitmap styling
 	face_layer = bitmap_layer_create(GRect(0, 0, 144, 168));
@@ -183,10 +155,8 @@ void window_unload(Window *window)
 	bitmap_layer_destroy(face_layer);
 	gbitmap_destroy(frame_1);
 	gbitmap_destroy(frame_2);
-	gbitmap_destroy(frame_3);
 	gbitmap_destroy(frame_low_1);
 	gbitmap_destroy(frame_low_2);
-	gbitmap_destroy(frame_low_3);
 
 	text_layer_destroy(time_layer);
 }
@@ -199,7 +169,7 @@ void init()
 		.unload = window_unload,
 	});
 
-	tick_timer_service_subscribe(SECOND_UNIT, (TickHandler)tick_handler); // Ask for an update every second
+	tick_timer_service_subscribe(MINUTE_UNIT, (TickHandler)tick_handler); // Ask for an update every minute
 	battery_state_service_subscribe(battery_handler); // Subscribe to battery changes
 
 	window_stack_push(g_window, true);

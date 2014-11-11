@@ -1,20 +1,18 @@
 Archive member included because of file (symbol)
 
 /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                              src/Baymax.c.14.o (app_event_loop)
+                              src/Baymax.c.12.o (app_event_loop)
 
 Allocating common symbols
 Common symbol       size              file
 
-frame_1             0x4               src/Baymax.c.14.o
-g_window            0x4               src/Baymax.c.14.o
-frame_low_1         0x4               src/Baymax.c.14.o
-frame_2             0x4               src/Baymax.c.14.o
-frame_3             0x4               src/Baymax.c.14.o
-time_layer          0x4               src/Baymax.c.14.o
-frame_low_2         0x4               src/Baymax.c.14.o
-face_layer          0x4               src/Baymax.c.14.o
-frame_low_3         0x4               src/Baymax.c.14.o
+frame_1             0x4               src/Baymax.c.12.o
+g_window            0x4               src/Baymax.c.12.o
+frame_low_1         0x4               src/Baymax.c.12.o
+frame_2             0x4               src/Baymax.c.12.o
+time_layer          0x4               src/Baymax.c.12.o
+frame_low_2         0x4               src/Baymax.c.12.o
+face_layer          0x4               src/Baymax.c.12.o
 
 Discarded input sections
 
@@ -30,10 +28,10 @@ Discarded input sections
  .jcr           0x0000000000000000        0x0 /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
  .tm_clone_table
                 0x0000000000000000        0x0 /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
- .text          0x0000000000000000        0x0 src/Baymax.c.14.o
- .bss           0x0000000000000000        0x0 src/Baymax.c.14.o
- .text          0x0000000000000000        0x0 appinfo.auto.c.14.o
- .bss           0x0000000000000000        0x0 appinfo.auto.c.14.o
+ .text          0x0000000000000000        0x0 src/Baymax.c.12.o
+ .bss           0x0000000000000000        0x0 src/Baymax.c.12.o
+ .text          0x0000000000000000        0x0 appinfo.auto.c.12.o
+ .bss           0x0000000000000000        0x0 appinfo.auto.c.12.o
  .bss           0x0000000000000000        0x0 /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
  .text.accel_data_service_subscribe__deprecated
                 0x0000000000000000        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
@@ -673,8 +671,8 @@ Linker script and memory map
 
 LOAD /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crti.o
 LOAD /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
-LOAD src/Baymax.c.14.o
-LOAD appinfo.auto.c.14.o
+LOAD src/Baymax.c.12.o
+LOAD appinfo.auto.c.12.o
 LOAD /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a
 START GROUP
 LOAD /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a
@@ -685,208 +683,202 @@ LOAD /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-
 
 .header         0x0000000000000000       0x82
  *(.pbl_header)
- .pbl_header    0x0000000000000000       0x82 appinfo.auto.c.14.o
+ .pbl_header    0x0000000000000000       0x82 appinfo.auto.c.12.o
                 0x0000000000000000                __pbl_app_info
 
-.text           0x0000000000000084      0x5ee
+.text           0x0000000000000084      0x566
  *(.text)
  .text          0x0000000000000084       0x14 /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
  *(.text.*)
  .text.battery_handler
-                0x0000000000000098       0x14 src/Baymax.c.14.o
+                0x0000000000000098       0x14 src/Baymax.c.12.o
                 0x0000000000000098                battery_handler
  .text.window_unload
-                0x00000000000000ac       0x80 src/Baymax.c.14.o
+                0x00000000000000ac       0x64 src/Baymax.c.12.o
                 0x00000000000000ac                window_unload
  .text.display_frame
-                0x000000000000012c       0x98 src/Baymax.c.14.o
-                0x000000000000012c                display_frame
- .text.animate  0x00000000000001c4       0x78 src/Baymax.c.14.o
-                0x00000000000001c4                animate
- .text.blink    0x000000000000023c       0x24 src/Baymax.c.14.o
-                0x000000000000023c                blink
+                0x0000000000000110       0x78 src/Baymax.c.12.o
+                0x0000000000000110                display_frame
+ .text.animate  0x0000000000000188       0x78 src/Baymax.c.12.o
+                0x0000000000000188                animate
  .text.tick_handler
-                0x0000000000000260       0x58 src/Baymax.c.14.o
-                0x0000000000000260                tick_handler
+                0x0000000000000200       0x50 src/Baymax.c.12.o
+                0x0000000000000200                tick_handler
  .text.populate_clock
-                0x00000000000002b8       0x1c src/Baymax.c.14.o
-                0x00000000000002b8                populate_clock
+                0x0000000000000250       0x1c src/Baymax.c.12.o
+                0x0000000000000250                populate_clock
  .text.window_load
-                0x00000000000002d4      0x15c src/Baymax.c.14.o
-                0x00000000000002d4                window_load
- .text.init     0x0000000000000430       0x70 src/Baymax.c.14.o
-                0x0000000000000430                init
- .text.deinit   0x00000000000004a0       0x18 src/Baymax.c.14.o
-                0x00000000000004a0                deinit
+                0x000000000000026c      0x13c src/Baymax.c.12.o
+                0x000000000000026c                window_load
+ .text.init     0x00000000000003a8       0x70 src/Baymax.c.12.o
+                0x00000000000003a8                init
+ .text.deinit   0x0000000000000418       0x18 src/Baymax.c.12.o
+                0x0000000000000418                deinit
  .text.startup.main
-                0x00000000000004b8       0x12 src/Baymax.c.14.o
-                0x00000000000004b8                main
- *fill*         0x00000000000004ca        0x2 
+                0x0000000000000430       0x12 src/Baymax.c.12.o
+                0x0000000000000430                main
+ *fill*         0x0000000000000442        0x2 
  .text.app_event_loop
-                0x00000000000004cc        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x00000000000004cc                app_event_loop
+                0x0000000000000444        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x0000000000000444                app_event_loop
  .text.app_timer_register
-                0x00000000000004d8        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x00000000000004d8                app_timer_register
+                0x0000000000000450        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x0000000000000450                app_timer_register
  .text.battery_state_service_peek
-                0x00000000000004e4        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x00000000000004e4                battery_state_service_peek
+                0x000000000000045c        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x000000000000045c                battery_state_service_peek
  .text.battery_state_service_subscribe
-                0x00000000000004f0        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x00000000000004f0                battery_state_service_subscribe
+                0x0000000000000468        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x0000000000000468                battery_state_service_subscribe
  .text.bitmap_layer_create
-                0x00000000000004fc        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x00000000000004fc                bitmap_layer_create
+                0x0000000000000474        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x0000000000000474                bitmap_layer_create
  .text.bitmap_layer_destroy
-                0x0000000000000508        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x0000000000000508                bitmap_layer_destroy
+                0x0000000000000480        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x0000000000000480                bitmap_layer_destroy
  .text.bitmap_layer_get_layer
-                0x0000000000000514        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x0000000000000514                bitmap_layer_get_layer
+                0x000000000000048c        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x000000000000048c                bitmap_layer_get_layer
  .text.bitmap_layer_set_bitmap
-                0x0000000000000520        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x0000000000000520                bitmap_layer_set_bitmap
+                0x0000000000000498        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x0000000000000498                bitmap_layer_set_bitmap
  .text.clock_copy_time_string
-                0x000000000000052c        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x000000000000052c                clock_copy_time_string
+                0x00000000000004a4        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x00000000000004a4                clock_copy_time_string
  .text.fonts_get_system_font
-                0x0000000000000538        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x0000000000000538                fonts_get_system_font
+                0x00000000000004b0        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x00000000000004b0                fonts_get_system_font
  .text.gbitmap_create_with_resource
-                0x0000000000000544        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x0000000000000544                gbitmap_create_with_resource
+                0x00000000000004bc        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x00000000000004bc                gbitmap_create_with_resource
  .text.gbitmap_destroy
-                0x0000000000000550        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x0000000000000550                gbitmap_destroy
+                0x00000000000004c8        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x00000000000004c8                gbitmap_destroy
  .text.layer_add_child
-                0x000000000000055c        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x000000000000055c                layer_add_child
+                0x00000000000004d4        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x00000000000004d4                layer_add_child
  .text.localtime
-                0x0000000000000568        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x0000000000000568                localtime
- .text.memset   0x0000000000000574        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x0000000000000574                memset
+                0x00000000000004e0        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x00000000000004e0                localtime
+ .text.memset   0x00000000000004ec        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x00000000000004ec                memset
  .text.strftime
-                0x0000000000000580        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x0000000000000580                strftime
+                0x00000000000004f8        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x00000000000004f8                strftime
  .text.text_layer_create
-                0x000000000000058c        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x000000000000058c                text_layer_create
+                0x0000000000000504        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x0000000000000504                text_layer_create
  .text.text_layer_destroy
-                0x0000000000000598        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x0000000000000598                text_layer_destroy
+                0x0000000000000510        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x0000000000000510                text_layer_destroy
  .text.text_layer_get_layer
-                0x00000000000005a4        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x00000000000005a4                text_layer_get_layer
+                0x000000000000051c        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x000000000000051c                text_layer_get_layer
  .text.text_layer_set_background_color
-                0x00000000000005b0        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x00000000000005b0                text_layer_set_background_color
+                0x0000000000000528        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x0000000000000528                text_layer_set_background_color
  .text.text_layer_set_font
-                0x00000000000005bc        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x00000000000005bc                text_layer_set_font
+                0x0000000000000534        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x0000000000000534                text_layer_set_font
  .text.text_layer_set_text
-                0x00000000000005c8        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x00000000000005c8                text_layer_set_text
+                0x0000000000000540        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x0000000000000540                text_layer_set_text
  .text.text_layer_set_text_alignment
-                0x00000000000005d4        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x00000000000005d4                text_layer_set_text_alignment
+                0x000000000000054c        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x000000000000054c                text_layer_set_text_alignment
  .text.text_layer_set_text_color
-                0x00000000000005e0        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x00000000000005e0                text_layer_set_text_color
+                0x0000000000000558        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x0000000000000558                text_layer_set_text_color
  .text.tick_timer_service_subscribe
-                0x00000000000005ec        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x00000000000005ec                tick_timer_service_subscribe
- .text.time     0x00000000000005f8        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x00000000000005f8                time
+                0x0000000000000564        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x0000000000000564                tick_timer_service_subscribe
+ .text.time     0x0000000000000570        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x0000000000000570                time
  .text.window_create
-                0x0000000000000604        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x0000000000000604                window_create
+                0x000000000000057c        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x000000000000057c                window_create
  .text.window_destroy
-                0x0000000000000610        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x0000000000000610                window_destroy
+                0x0000000000000588        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x0000000000000588                window_destroy
  .text.window_get_root_layer
-                0x000000000000061c        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x000000000000061c                window_get_root_layer
+                0x0000000000000594        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x0000000000000594                window_get_root_layer
  .text.window_set_window_handlers
-                0x0000000000000628        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x0000000000000628                window_set_window_handlers
+                0x00000000000005a0        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x00000000000005a0                window_set_window_handlers
  .text.window_stack_push
-                0x0000000000000634        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
-                0x0000000000000634                window_stack_push
+                0x00000000000005ac        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+                0x00000000000005ac                window_stack_push
  *(.rodata)
- .rodata        0x0000000000000640       0x10 src/Baymax.c.14.o
+ .rodata        0x00000000000005b8       0x10 src/Baymax.c.12.o
  *(.rodata*)
  .rodata.str1.1
-                0x0000000000000650       0x22 src/Baymax.c.14.o
+                0x00000000000005c8       0x22 src/Baymax.c.12.o
 
-.glue_7         0x0000000000000674        0x0
+.glue_7         0x00000000000005ec        0x0
  .glue_7        0x0000000000000000        0x0 linker stubs
 
-.glue_7t        0x0000000000000674        0x0
+.glue_7t        0x00000000000005ec        0x0
  .glue_7t       0x0000000000000000        0x0 linker stubs
 
-.vfp11_veneer   0x0000000000000674        0x0
+.vfp11_veneer   0x00000000000005ec        0x0
  .vfp11_veneer  0x0000000000000000        0x0 linker stubs
 
-.v4_bx          0x0000000000000674        0x0
+.v4_bx          0x00000000000005ec        0x0
  .v4_bx         0x0000000000000000        0x0 linker stubs
 
-.iplt           0x0000000000000674        0x0
+.iplt           0x00000000000005ec        0x0
  .iplt          0x0000000000000000        0x0 /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.rel.dyn        0x0000000000000674        0x0
+.rel.dyn        0x00000000000005ec        0x0
  .rel.iplt      0x0000000000000000        0x0 /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
  .rel.got       0x0000000000000000        0x0 /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.data           0x0000000000000674       0x10
+.data           0x00000000000005ec       0x10
  *(.data)
- .data          0x0000000000000674        0x0 /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crti.o
- .data          0x0000000000000674        0x4 /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
-                0x0000000000000674                __dso_handle
- .data          0x0000000000000678        0x0 src/Baymax.c.14.o
- .data          0x0000000000000678        0x0 appinfo.auto.c.14.o
- .data          0x0000000000000678        0x0 /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
- .data          0x0000000000000678        0x0 /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
- .data          0x0000000000000678        0x0 /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtn.o
+ .data          0x00000000000005ec        0x0 /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crti.o
+ .data          0x00000000000005ec        0x4 /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
+                0x00000000000005ec                __dso_handle
+ .data          0x00000000000005f0        0x0 src/Baymax.c.12.o
+ .data          0x00000000000005f0        0x0 appinfo.auto.c.12.o
+ .data          0x00000000000005f0        0x0 /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
+ .data          0x00000000000005f0        0x0 /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
+ .data          0x00000000000005f0        0x0 /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtn.o
  *(.data.*)
+ .data.buffer.6637
+                0x00000000000005f0        0x6 src/Baymax.c.12.o
  .data.eyes_closing
-                0x0000000000000678        0x1 src/Baymax.c.14.o
- .data.buffer.6645
-                0x0000000000000679        0x6 src/Baymax.c.14.o
- *fill*         0x000000000000067f        0x1 
+                0x00000000000005f6        0x1 src/Baymax.c.12.o
+ *fill*         0x00000000000005f7        0x1 
  .data.current_frame
-                0x0000000000000680        0x4 src/Baymax.c.14.o
+                0x00000000000005f8        0x4 src/Baymax.c.12.o
 
-.igot.plt       0x0000000000000684        0x0
+.igot.plt       0x00000000000005fc        0x0
  .igot.plt      0x0000000000000000        0x0 /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.got            0x0000000000000684       0x24
- .got           0x0000000000000684       0x24 /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
+.got            0x00000000000005fc       0x1c
+ .got           0x00000000000005fc       0x1c /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.got.plt        0x00000000000006a8        0xc
- .got.plt       0x00000000000006a8        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
-                0x00000000000006a8                _GLOBAL_OFFSET_TABLE_
+.got.plt        0x0000000000000618        0xc
+ .got.plt       0x0000000000000618        0xc /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
+                0x0000000000000618                _GLOBAL_OFFSET_TABLE_
 
-.bss            0x00000000000006b4       0x30
+.bss            0x0000000000000624       0x24
  *(.bss)
  *(.bss.*)
  .bss.animating
-                0x00000000000006b4        0x1 src/Baymax.c.14.o
- *fill*         0x00000000000006b5        0x3 
+                0x0000000000000624        0x1 src/Baymax.c.12.o
+ *fill*         0x0000000000000625        0x3 
  .bss.charge_level
-                0x00000000000006b8        0x4 src/Baymax.c.14.o
- .bss.second_count
-                0x00000000000006bc        0x4 src/Baymax.c.14.o
- COMMON         0x00000000000006c0       0x24 src/Baymax.c.14.o
-                0x00000000000006c0                frame_1
-                0x00000000000006c4                g_window
-                0x00000000000006c8                frame_low_1
-                0x00000000000006cc                frame_2
-                0x00000000000006d0                frame_3
-                0x00000000000006d4                time_layer
-                0x00000000000006d8                frame_low_2
-                0x00000000000006dc                face_layer
-                0x00000000000006e0                frame_low_3
+                0x0000000000000628        0x4 src/Baymax.c.12.o
+ COMMON         0x000000000000062c       0x1c src/Baymax.c.12.o
+                0x000000000000062c                frame_1
+                0x0000000000000630                g_window
+                0x0000000000000634                frame_low_1
+                0x0000000000000638                frame_2
+                0x000000000000063c                time_layer
+                0x0000000000000640                frame_low_2
+                0x0000000000000644                face_layer
 
 DISCARD
  libc.a(*)
@@ -902,9 +894,9 @@ OUTPUT(/Users/Jesse/Dropbox/Projects/Pebble/Baymax/build/pebble-app.elf elf32-li
  .ARM.attributes
                 0x0000000000000019       0x29 /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
  .ARM.attributes
-                0x0000000000000042       0x33 src/Baymax.c.14.o
+                0x0000000000000042       0x33 src/Baymax.c.12.o
  .ARM.attributes
-                0x0000000000000075       0x33 appinfo.auto.c.14.o
+                0x0000000000000075       0x33 appinfo.auto.c.12.o
  .ARM.attributes
                 0x00000000000000a8       0x21 /Users/Jesse/pebble-dev/PebbleSDK-2.7/Pebble/lib/libpebble.a(tmpu_Elzfpebble.o)
  .ARM.attributes
@@ -915,39 +907,39 @@ OUTPUT(/Users/Jesse/Dropbox/Projects/Pebble/Baymax/build/pebble-app.elf elf32-li
 .comment        0x0000000000000000       0x4e
  .comment       0x0000000000000000       0x4e /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
                                          0x4f (size before relaxing)
- .comment       0x0000000000000000       0x4f src/Baymax.c.14.o
- .comment       0x0000000000000000       0x4f appinfo.auto.c.14.o
+ .comment       0x0000000000000000       0x4f src/Baymax.c.12.o
+ .comment       0x0000000000000000       0x4f appinfo.auto.c.12.o
  .comment       0x0000000000000000       0x4f /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
 
-.debug_info     0x0000000000000000     0x11c1
- .debug_info    0x0000000000000000      0xe68 src/Baymax.c.14.o
- .debug_info    0x0000000000000e68      0x359 appinfo.auto.c.14.o
+.debug_info     0x0000000000000000     0x110d
+ .debug_info    0x0000000000000000      0xdc0 src/Baymax.c.12.o
+ .debug_info    0x0000000000000dc0      0x34d appinfo.auto.c.12.o
 
 .debug_abbrev   0x0000000000000000      0x3af
- .debug_abbrev  0x0000000000000000      0x311 src/Baymax.c.14.o
- .debug_abbrev  0x0000000000000311       0x9e appinfo.auto.c.14.o
+ .debug_abbrev  0x0000000000000000      0x311 src/Baymax.c.12.o
+ .debug_abbrev  0x0000000000000311       0x9e appinfo.auto.c.12.o
 
 .debug_loc      0x0000000000000000      0x1a5
- .debug_loc     0x0000000000000000      0x1a5 src/Baymax.c.14.o
+ .debug_loc     0x0000000000000000      0x1a5 src/Baymax.c.12.o
 
-.debug_aranges  0x0000000000000000       0x88
+.debug_aranges  0x0000000000000000       0x80
  .debug_aranges
-                0x0000000000000000       0x70 src/Baymax.c.14.o
+                0x0000000000000000       0x68 src/Baymax.c.12.o
  .debug_aranges
-                0x0000000000000070       0x18 appinfo.auto.c.14.o
+                0x0000000000000068       0x18 appinfo.auto.c.12.o
 
-.debug_ranges   0x0000000000000000       0x78
- .debug_ranges  0x0000000000000000       0x78 src/Baymax.c.14.o
+.debug_ranges   0x0000000000000000       0x70
+ .debug_ranges  0x0000000000000000       0x70 src/Baymax.c.12.o
 
-.debug_line     0x0000000000000000      0x497
- .debug_line    0x0000000000000000      0x37b src/Baymax.c.14.o
- .debug_line    0x000000000000037b      0x11c appinfo.auto.c.14.o
+.debug_line     0x0000000000000000      0x478
+ .debug_line    0x0000000000000000      0x35c src/Baymax.c.12.o
+ .debug_line    0x000000000000035c      0x11c appinfo.auto.c.12.o
 
-.debug_str      0x0000000000000000      0x9d9
- .debug_str     0x0000000000000000      0x7cd src/Baymax.c.14.o
-                                        0x857 (size before relaxing)
- .debug_str     0x00000000000007cd      0x20c appinfo.auto.c.14.o
-                                        0x3ea (size before relaxing)
+.debug_str      0x0000000000000000      0x969
+ .debug_str     0x0000000000000000      0x75d src/Baymax.c.12.o
+                                        0x7e7 (size before relaxing)
+ .debug_str     0x000000000000075d      0x20c appinfo.auto.c.12.o
+                                        0x3b0 (size before relaxing)
 
-.debug_frame    0x0000000000000000      0x11c
- .debug_frame   0x0000000000000000      0x11c src/Baymax.c.14.o
+.debug_frame    0x0000000000000000      0x10c
+ .debug_frame   0x0000000000000000      0x10c src/Baymax.c.12.o
