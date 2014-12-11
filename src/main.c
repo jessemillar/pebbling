@@ -8,6 +8,26 @@ static GBitmap *g_bitmap_image;
 static TextLayer *g_text_layer_time;
 static GFont *g_font_upheaval;
 
+static void show_shield()
+{
+	gbitmap_destroy(g_bitmap_image); // Destroy the image before loading a different one to save RAM
+	g_bitmap_image = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_FACE);
+	bitmap_layer_set_bitmap(g_bitmap_layer, g_bitmap_image);
+
+	layer_mark_dirty(bitmap_layer_get_layer(g_bitmap_layer));
+}
+
+static void tap_handler(AccelAxisType axis, int32_t direction)
+{
+	gbitmap_destroy(g_bitmap_image); // Destroy the image before loading a different one to save RAM
+	g_bitmap_image = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_FACE_CRACKED);
+	bitmap_layer_set_bitmap(g_bitmap_layer, g_bitmap_image);
+
+	layer_mark_dirty(bitmap_layer_get_layer(g_bitmap_layer));
+
+	app_timer_register(10000, show_shield, NULL); // Change to the SHIELD logo after a while
+}
+
 void tick_handler(struct tm *tick_time, TimeUnits units_changed)
 {
 	static char buffer[8]; // Enough for XX:XXxXX
@@ -62,6 +82,7 @@ static void init()
 	});
 
 	tick_timer_service_subscribe(MINUTE_UNIT, (TickHandler)tick_handler);
+	accel_tap_service_subscribe(tap_handler);
 
 	window_stack_push(g_window, true);
 }

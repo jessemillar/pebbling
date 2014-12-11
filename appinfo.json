@@ -25,6 +25,11 @@
         "file": "images/face.png"
       },
       {
+        "type": "png",
+        "name": "IMAGE_FACE_CRACKED",
+        "file": "images/face_cracked.png"
+      },
+      {
         "type": "font",
         "name": "FONT_UPHEAVAL_20",
         "file": "fonts/upheaval.ttf"

@@ -13,6 +13,7 @@ typedef enum {
   DEFAULT_MENU_ICON = 0, // Friendly synonym for use in `PBL_APP_INFO()` calls
   RESOURCE_ID_IMAGE_ICON,
   RESOURCE_ID_IMAGE_FACE,
+  RESOURCE_ID_IMAGE_FACE_CRACKED,
   RESOURCE_ID_FONT_UPHEAVAL_20,
 
 } ResourceId;
