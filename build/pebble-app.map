@@ -828,20 +828,21 @@ LOAD /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-
 .igot.plt       0x000000000000048c        0x0
  .igot.plt      0x0000000000000000        0x0 /Users/Jesse/pebble-dev/PebbleSDK-2.7/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.bss            0x000000000000048c       0x1c
+.bss            0x000000000000048c       0x20
  *(.bss)
  *(.bss.*)
  .bss.g_bitmap_layer
                 0x000000000000048c        0x4 src/main.c.11.o
  .bss.g_window  0x0000000000000490        0x4 src/main.c.11.o
  .bss.buffer.6629
-                0x0000000000000494        0x8 src/main.c.11.o
+                0x0000000000000494        0x9 src/main.c.11.o
+ *fill*         0x000000000000049d        0x3 
  .bss.g_text_layer_time
-                0x000000000000049c        0x4 src/main.c.11.o
- .bss.g_bitmap_image
                 0x00000000000004a0        0x4 src/main.c.11.o
- .bss.g_font_upheaval
+ .bss.g_bitmap_image
                 0x00000000000004a4        0x4 src/main.c.11.o
+ .bss.g_font_upheaval
+                0x00000000000004a8        0x4 src/main.c.11.o
 
 DISCARD
  libc.a(*)

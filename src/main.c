@@ -25,12 +25,12 @@ static void tap_handler(AccelAxisType axis, int32_t direction)
 
 	layer_mark_dirty(bitmap_layer_get_layer(g_bitmap_layer));
 
-	app_timer_register(10000, show_shield, NULL); // Change to the SHIELD logo after a while
+	app_timer_register(3000, show_shield, NULL); // Change to the SHIELD logo after a while
 }
 
 void tick_handler(struct tm *tick_time, TimeUnits units_changed)
 {
-	static char buffer[8]; // Enough for XX:XXxXX
+	static char buffer[9]; // Enough for XX:XXxXX with a trailing space
 	strftime(buffer, sizeof(buffer), "%H:%M", tick_time);
 	clock_copy_time_string(buffer, sizeof(buffer));
 	text_layer_set_text(g_text_layer_time, buffer);
