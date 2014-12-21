@@ -1,0 +1,17 @@
+{
+  "uuid": "48916dea-8977-445f-aa78-b770c9891f0a",
+  "shortName": "Adventure Time",
+  "longName": "Adventure Time",
+  "companyName": "Jesse Millar",
+  "versionCode": 1,
+  "versionLabel": "1.0",
+  "watchapp": {
+    "watchface": true
+  },
+  "appKeys": {
+    "dummy": 0
+  },
+  "resources": {
+    "media": []
+  }
+}
