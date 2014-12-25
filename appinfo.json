@@ -1,0 +1,17 @@
+{
+  "uuid": "5705dee6-6681-4e43-8963-ce16de37cdf1",
+  "shortName": "Gunter",
+  "longName": "Gunter",
+  "companyName": "Jesse Millar",
+  "versionCode": 1,
+  "versionLabel": "1.0",
+  "watchapp": {
+    "watchface": true
+  },
+  "appKeys": {
+    "dummy": 0
+  },
+  "resources": {
+    "media": []
+  }
+}
