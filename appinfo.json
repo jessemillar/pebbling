@@ -12,6 +12,23 @@
     "dummy": 0
   },
   "resources": {
-    "media": []
+    "media": [
+      {
+        "menuIcon": true,
+        "type": "png",
+        "name": "IMAGE_ICON",
+        "file": "images/icon.png"
+      },
+      {
+        "type": "font",
+        "name": "FONT_HANGED_32",
+        "file": "fonts/hanged.ttf"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_FINN",
+        "file": "images/finn.png"
+      },
+    ]
   }
 }
