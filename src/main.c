@@ -11,63 +11,156 @@ static GBitmap *s_image_third;
 static BitmapLayer *s_image_layer_fourth;
 static GBitmap *s_image_fourth;
 
-void set_digit(BitmapLayer *image_layer, GBitmap *image, char character)
-{
-	gbitmap_destroy(image); // Destroy the image before loading a different one to save RAM
-
-	if (character == '0')
-	{	
-		image = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_0);
-	}
-	else if (character == '1')
-	{
-		image = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_1);
-	}
-	else if (character == '2')
-	{
-		image = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_2);
-	}
-	else if (character == '3')
-	{
-		image = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_3);
-	}
-	else if (character == '4')
-	{
-		image = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_4);
-	}
-	else if (character == '5')
-	{
-		image = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_5);
-	}
-	else if (character == '6')
-	{
-		image = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_6);
-	}
-	else if (character == '7')
-	{
-		image = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_7);
-	}
-	else if (character == '8')
-	{
-		image = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_8);
-	}
-	else if (character == '9')
-	{
-		image = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_9);
-	}
-
-	bitmap_layer_set_bitmap(image_layer, image);
-}
-
 void tick_handler(struct tm *tick_time, TimeUnits units_changed)
 {
 	static char buffer[5]; // Enough for XXXX with a trailing space
-	strftime(buffer, sizeof(buffer), "%I%M", tick_time);
 
-	set_digit(s_image_layer_first, s_image_first, buffer[0]);
-	set_digit(s_image_layer_second, s_image_second, buffer[1]);
-	set_digit(s_image_layer_third, s_image_third, buffer[2]);
-	set_digit(s_image_layer_fourth, s_image_fourth, buffer[3]);
+	if (clock_is_24h_style() == true)
+	{
+		// Use 24 hour format
+		strftime(buffer, sizeof(buffer), "%H%M", tick_time);
+	}
+	else
+	{
+		// Use 12 hour format
+		strftime(buffer, sizeof(buffer), "%I%M", tick_time);
+	}
+
+	gbitmap_destroy(s_image_first); // Destroy the image before loading a different one to save RAM
+
+	if (buffer[0] == '0')
+	{	
+		s_image_first = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_0);
+	}
+	else if (buffer[0] == '1')
+	{
+		s_image_first = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_1);
+	}
+	else if (buffer[0] == '2')
+	{
+		s_image_first = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_2);
+	}
+
+	bitmap_layer_set_bitmap(s_image_layer_first, s_image_first);
+
+	gbitmap_destroy(s_image_second); // Destroy the image before loading a different one to save RAM
+
+	if (buffer[1] == '0')
+	{	
+		s_image_second = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_0);
+	}
+	else if (buffer[1] == '1')
+	{
+		s_image_second = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_1);
+	}
+	else if (buffer[1] == '2')
+	{
+		s_image_second = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_2);
+	}
+	else if (buffer[1] == '3')
+	{
+		s_image_second = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_3);
+	}
+	else if (buffer[1] == '4')
+	{
+		s_image_second = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_4);
+	}
+	else if (buffer[1] == '5')
+	{
+		s_image_second = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_5);
+	}
+	else if (buffer[1] == '6')
+	{
+		s_image_second = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_6);
+	}
+	else if (buffer[1] == '7')
+	{
+		s_image_second = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_7);
+	}
+	else if (buffer[1] == '8')
+	{
+		s_image_second = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_8);
+	}
+	else if (buffer[1] == '9')
+	{
+		s_image_second = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_9);
+	}
+
+	bitmap_layer_set_bitmap(s_image_layer_second, s_image_second);
+
+	gbitmap_destroy(s_image_third); // Destroy the image before loading a different one to save RAM
+
+	if (buffer[2] == '0')
+	{	
+		s_image_third = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_0);
+	}
+	else if (buffer[2] == '1')
+	{
+		s_image_third = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_1);
+	}
+	else if (buffer[2] == '2')
+	{
+		s_image_third = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_2);
+	}
+	else if (buffer[2] == '3')
+	{
+		s_image_third = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_3);
+	}
+	else if (buffer[2] == '4')
+	{
+		s_image_third = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_4);
+	}
+	else if (buffer[2] == '5')
+	{
+		s_image_third = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_5);
+	}
+
+	bitmap_layer_set_bitmap(s_image_layer_third, s_image_third);
+
+	gbitmap_destroy(s_image_fourth); // Destroy the image before loading a different one to save RAM
+
+	if (buffer[3] == '0')
+	{	
+		s_image_fourth = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_0);
+	}
+	else if (buffer[3] == '1')
+	{
+		s_image_fourth = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_1);
+	}
+	else if (buffer[3] == '2')
+	{
+		s_image_fourth = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_2);
+	}
+	else if (buffer[3] == '3')
+	{
+		s_image_fourth = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_3);
+	}
+	else if (buffer[3] == '4')
+	{
+		s_image_fourth = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_4);
+	}
+	else if (buffer[3] == '5')
+	{
+		s_image_fourth = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_5);
+	}
+	else if (buffer[3] == '6')
+	{
+		s_image_fourth = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_6);
+	}
+	else if (buffer[3] == '7')
+	{
+		s_image_fourth = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_7);
+	}
+	else if (buffer[3] == '8')
+	{
+		s_image_fourth = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_8);
+	}
+	else if (buffer[3] == '9')
+	{
+		s_image_fourth = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_9);
+	}
+
+	bitmap_layer_set_bitmap(s_image_layer_fourth, s_image_fourth);
 }
 
 void populate_clock() // Initially populate the clock so the face doesn't start blank
