@@ -2,16 +2,73 @@
   "uuid": "bfc2e50a-0b00-4667-8703-290ab232ba6b",
   "shortName": "Stack",
   "longName": "Stack",
-  "companyName": "MakeAwesomeHappen",
+  "companyName": "Jesse Millar",
   "versionCode": 1,
   "versionLabel": "1.0",
   "watchapp": {
-    "watchface": false
+    "watchface": true
   },
   "appKeys": {
     "dummy": 0
   },
   "resources": {
-    "media": []
+    "media": [
+      {
+        "menuIcon": true,
+        "type": "png",
+        "name": "IMAGE_ICON",
+        "file": "images/icon.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_0",
+        "file": "images/digits/0.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_1",
+        "file": "images/digits/1.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_2",
+        "file": "images/digits/2.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_3",
+        "file": "images/digits/3.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_4",
+        "file": "images/digits/4.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_5",
+        "file": "images/digits/5.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_6",
+        "file": "images/digits/6.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_7",
+        "file": "images/digits/7.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_8",
+        "file": "images/digits/8.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_9",
+        "file": "images/digits/9.png"
+      }
+    ]
   }
 }
