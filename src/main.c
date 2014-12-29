@@ -13,8 +13,6 @@ static GBitmap *s_image_fourth;
 
 void set_digit(BitmapLayer *image_layer, GBitmap *image, char character)
 {
-	gbitmap_destroy(image); // Destroy the image before loading a different one to save RAM
-
 	if (character == '0')
 	{	
 		image = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_0);
@@ -59,6 +57,14 @@ void set_digit(BitmapLayer *image_layer, GBitmap *image, char character)
 	bitmap_layer_set_bitmap(image_layer, image);
 }
 
+void clear_digits()
+{
+	gbitmap_destroy(s_image_first);
+	gbitmap_destroy(s_image_second);
+	gbitmap_destroy(s_image_third);
+	gbitmap_destroy(s_image_fourth);
+}
+
 void tick_handler(struct tm *tick_time, TimeUnits units_changed)
 {
 	static char buffer[5]; // Enough for XXXX with a trailing space
@@ -73,6 +79,8 @@ void tick_handler(struct tm *tick_time, TimeUnits units_changed)
 		// Use 12 hour format
 		strftime(buffer, sizeof(buffer), "%I%M", tick_time);
 	}
+
+	clear_digits();
 
 	set_digit(s_image_layer_first, s_image_first, buffer[0]);
 	set_digit(s_image_layer_second, s_image_second, buffer[1]);
