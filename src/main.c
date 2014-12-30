@@ -4,62 +4,64 @@ static Window *window;
 
 static BitmapLayer *h_bitmap_layer_face;
 static GBitmap *h_bitmap_face;
+static BitmapLayer *h_bitmap_layer_digit;
+static GBitmap *h_bitmap_digit;
 
 static uint32_t h_images_face[24] = {
-	IMAGE_FACE_0,
-	IMAGE_FACE_1,
-	IMAGE_FACE_2,
-	IMAGE_FACE_3,
-	IMAGE_FACE_4,
-	IMAGE_FACE_5,
-	IMAGE_FACE_6,
-	IMAGE_FACE_7,
-	IMAGE_FACE_8,
-	IMAGE_FACE_9,
-	IMAGE_FACE_10,
-	IMAGE_FACE_11,
-	IMAGE_FACE_12,
-	IMAGE_FACE_13,
-	IMAGE_FACE_14,
-	IMAGE_FACE_15,
-	IMAGE_FACE_16,
-	IMAGE_FACE_17,
-	IMAGE_FACE_18,
-	IMAGE_FACE_19,
-	IMAGE_FACE_20,
-	IMAGE_FACE_21,
-	IMAGE_FACE_22,
-	IMAGE_FACE_23
+	RESOURCE_ID_IMAGE_FACE_0,
+	RESOURCE_ID_IMAGE_FACE_1,
+	RESOURCE_ID_IMAGE_FACE_2,
+	RESOURCE_ID_IMAGE_FACE_3,
+	RESOURCE_ID_IMAGE_FACE_4,
+	RESOURCE_ID_IMAGE_FACE_5,
+	RESOURCE_ID_IMAGE_FACE_6,
+	RESOURCE_ID_IMAGE_FACE_7,
+	RESOURCE_ID_IMAGE_FACE_8,
+	RESOURCE_ID_IMAGE_FACE_9,
+	RESOURCE_ID_IMAGE_FACE_10,
+	RESOURCE_ID_IMAGE_FACE_11,
+	RESOURCE_ID_IMAGE_FACE_12,
+	RESOURCE_ID_IMAGE_FACE_13,
+	RESOURCE_ID_IMAGE_FACE_14,
+	RESOURCE_ID_IMAGE_FACE_15,
+	RESOURCE_ID_IMAGE_FACE_16,
+	RESOURCE_ID_IMAGE_FACE_17,
+	RESOURCE_ID_IMAGE_FACE_18,
+	RESOURCE_ID_IMAGE_FACE_19,
+	RESOURCE_ID_IMAGE_FACE_20,
+	RESOURCE_ID_IMAGE_FACE_21,
+	RESOURCE_ID_IMAGE_FACE_22,
+	RESOURCE_ID_IMAGE_FACE_23
 };
 
 static uint32_t h_images_white_digits[12] = {
-	IMAGE_DIGIT_WHITE_1,
-	IMAGE_DIGIT_WHITE_2,
-	IMAGE_DIGIT_WHITE_3,
-	IMAGE_DIGIT_WHITE_4,
-	IMAGE_DIGIT_WHITE_5,
-	IMAGE_DIGIT_WHITE_6,
-	IMAGE_DIGIT_WHITE_7,
-	IMAGE_DIGIT_WHITE_8,
-	IMAGE_DIGIT_WHITE_9,
-	IMAGE_DIGIT_WHITE_10,
-	IMAGE_DIGIT_WHITE_11,
-	IMAGE_DIGIT_WHITE_12
+	RESOURCE_ID_IMAGE_DIGIT_WHITE_1,
+	RESOURCE_ID_IMAGE_DIGIT_WHITE_2,
+	RESOURCE_ID_IMAGE_DIGIT_WHITE_3,
+	RESOURCE_ID_IMAGE_DIGIT_WHITE_4,
+	RESOURCE_ID_IMAGE_DIGIT_WHITE_5,
+	RESOURCE_ID_IMAGE_DIGIT_WHITE_6,
+	RESOURCE_ID_IMAGE_DIGIT_WHITE_7,
+	RESOURCE_ID_IMAGE_DIGIT_WHITE_8,
+	RESOURCE_ID_IMAGE_DIGIT_WHITE_9,
+	RESOURCE_ID_IMAGE_DIGIT_WHITE_10,
+	RESOURCE_ID_IMAGE_DIGIT_WHITE_11,
+	RESOURCE_ID_IMAGE_DIGIT_WHITE_12
 };
 
 static uint32_t h_images_black_digits[12] = {
-	IMAGE_DIGIT_BLACK_1,
-	IMAGE_DIGIT_BLACK_2,
-	IMAGE_DIGIT_BLACK_3,
-	IMAGE_DIGIT_BLACK_4,
-	IMAGE_DIGIT_BLACK_5,
-	IMAGE_DIGIT_BLACK_6,
-	IMAGE_DIGIT_BLACK_7,
-	IMAGE_DIGIT_BLACK_8,
-	IMAGE_DIGIT_BLACK_9,
-	IMAGE_DIGIT_BLACK_10,
-	IMAGE_DIGIT_BLACK_11,
-	IMAGE_DIGIT_BLACK_12
+	RESOURCE_ID_IMAGE_DIGIT_BLACK_1,
+	RESOURCE_ID_IMAGE_DIGIT_BLACK_2,
+	RESOURCE_ID_IMAGE_DIGIT_BLACK_3,
+	RESOURCE_ID_IMAGE_DIGIT_BLACK_4,
+	RESOURCE_ID_IMAGE_DIGIT_BLACK_5,
+	RESOURCE_ID_IMAGE_DIGIT_BLACK_6,
+	RESOURCE_ID_IMAGE_DIGIT_BLACK_7,
+	RESOURCE_ID_IMAGE_DIGIT_BLACK_8,
+	RESOURCE_ID_IMAGE_DIGIT_BLACK_9,
+	RESOURCE_ID_IMAGE_DIGIT_BLACK_10,
+	RESOURCE_ID_IMAGE_DIGIT_BLACK_11,
+	RESOURCE_ID_IMAGE_DIGIT_BLACK_12
 };
 
 void tick_handler(struct tm *tick_time, TimeUnits units_changed)
@@ -95,6 +97,12 @@ static void window_load(Window *window)
 	bitmap_layer_set_bitmap(h_bitmap_layer_face, h_bitmap_face);
 	layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(h_bitmap_layer_face));
 
+	h_bitmap_layer_digit = bitmap_layer_create(GRect(0, 0, 144, 168));
+	h_bitmap_digit = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_DIGIT_WHITE_1);
+	bitmap_layer_set_compositing_mode(h_bitmap_layer_digit, GCompOpOr);
+	bitmap_layer_set_bitmap(h_bitmap_layer_digit, h_bitmap_digit);
+	layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(h_bitmap_layer_digit));
+
 	populate_clock();
 }
 
@@ -102,6 +110,8 @@ static void window_unload(Window *window)
 {
 	bitmap_layer_destroy(h_bitmap_layer_face);
 	gbitmap_destroy(h_bitmap_face);
+	bitmap_layer_destroy(h_bitmap_layer_digit);
+	gbitmap_destroy(h_bitmap_digit);
 }
 
 static void init(void)
