@@ -5,6 +5,9 @@ static Window *window;
 static RotBitmapLayer *h_bitmap_layer_face;
 static GBitmap *h_bitmap_face;
 
+static BitmapLayer *h_bitmap_layer_digit;
+static GBitmap *h_bitmap_digit;
+
 static bool h_white_digit;
 
 static uint32_t h_images_white_digits[12] = {
@@ -39,21 +42,28 @@ static uint32_t h_images_black_digits[12] = {
 
 void tick_handler(struct tm *tick_time, TimeUnits units_changed)
 {
-	static char hour_buffer[3]; // Enough for XX with a trailing space
-	static char minute_buffer[3]; // Enough for XX with a trailing space
+	int current_hour;
+	current_hour = tick_time->tm_hour;
 
-	if (clock_is_24h_style() == true)
+	if (current_hour > 12)
 	{
-		// Use 24 hour format
-		strftime(hour_buffer, sizeof(hour_buffer), "%k", tick_time);
+		current_hour = current_hour - 12;
+	}
+
+	gbitmap_destroy(h_bitmap_digit);
+
+	if (h_white_digit == true)
+	{
+		bitmap_layer_set_compositing_mode(h_bitmap_layer_digit, GCompOpOr);
+		h_bitmap_digit = gbitmap_create_with_resource(h_images_white_digits[current_hour - 1]);
 	}
 	else
 	{
-		// Use 12 hour format
-		strftime(hour_buffer, sizeof(hour_buffer), "%l", tick_time);
+		bitmap_layer_set_compositing_mode(h_bitmap_layer_digit, GCompOpAnd);
+		h_bitmap_digit = gbitmap_create_with_resource(h_images_black_digits[current_hour - 1]);
 	}
 
-	strftime(minute_buffer, sizeof(minute_buffer), "%M", tick_time);
+	bitmap_layer_set_bitmap(h_bitmap_layer_digit, h_bitmap_digit);
 
 	rot_bitmap_layer_set_angle(h_bitmap_layer_face, tick_time->tm_min * TRIG_MAX_ANGLE / 60);
 }
@@ -68,6 +78,20 @@ void populate_clock() // Initially populate the clock so the face doesn't start 
 	tick_handler(t, MINUTE_UNIT);
 }
 
+static void tap_handler(AccelAxisType axis, int32_t direction)
+{
+	if (h_white_digit == true)
+	{
+		h_white_digit = false;
+	}
+	else
+	{
+		h_white_digit = true;
+	}
+
+	populate_clock();
+}
+
 static void window_load(Window *window)
 {
 	h_white_digit = true;
@@ -77,6 +101,9 @@ static void window_load(Window *window)
 	layer_set_frame(bitmap_layer_get_layer((BitmapLayer*)h_bitmap_layer_face), GRect(-85, -73, 314, 314));
 	layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer((BitmapLayer*)h_bitmap_layer_face));
 
+	h_bitmap_layer_digit = bitmap_layer_create(GRect(0, 0, 144, 168));
+	layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(h_bitmap_layer_digit));
+
 	populate_clock();
 }
 
@@ -84,6 +111,8 @@ static void window_unload(Window *window)
 {
 	rot_bitmap_layer_destroy(h_bitmap_layer_face);
 	gbitmap_destroy(h_bitmap_face);
+	bitmap_layer_destroy(h_bitmap_layer_digit);
+	gbitmap_destroy(h_bitmap_digit);
 }
 
 static void init(void)
@@ -99,6 +128,7 @@ static void init(void)
 	window_stack_push(window, true);
 
 	tick_timer_service_subscribe(MINUTE_UNIT, (TickHandler)tick_handler);
+	accel_tap_service_subscribe(tap_handler);
 }
 
 static void deinit(void)
