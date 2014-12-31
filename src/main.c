@@ -40,7 +40,7 @@ static uint32_t h_images_black_digits[12] = {
 	RESOURCE_ID_IMAGE_DIGIT_BLACK_12
 };
 
-void tick_handler(struct tm *tick_time, TimeUnits units_changed)
+void display_digit(struct tm *tick_time, TimeUnits units_changed)
 {
 	int current_hour;
 	current_hour = tick_time->tm_hour;
@@ -64,8 +64,17 @@ void tick_handler(struct tm *tick_time, TimeUnits units_changed)
 	}
 
 	bitmap_layer_set_bitmap(h_bitmap_layer_digit, h_bitmap_digit);
+}
 
+void rotate_face(struct tm *tick_time, TimeUnits units_changed)
+{
 	rot_bitmap_layer_set_angle(h_bitmap_layer_face, tick_time->tm_min * TRIG_MAX_ANGLE / 60);
+}
+
+void tick_handler(struct tm *tick_time, TimeUnits units_changed)
+{
+	display_digit(tick_time, MINUTE_UNIT);
+	rotate_face(tick_time, MINUTE_UNIT);
 }
 
 void populate_clock() // Initially populate the clock so the face doesn't start blank
@@ -89,7 +98,12 @@ static void tap_handler(AccelAxisType axis, int32_t direction)
 		h_white_digit = true;
 	}
 
-	populate_clock();
+	struct tm *t;
+	time_t temp;
+	temp = time(NULL);
+	t = localtime(&temp);
+
+	display_digit(t, MINUTE_UNIT);
 }
 
 static void window_load(Window *window)
