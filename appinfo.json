@@ -21,8 +21,8 @@
       },
       {
         "type": "font",
-        "name": "FONT_HANGED_32",
-        "file": "fonts/hanged.ttf"
+        "name": "FONT_THINNYNESS_32",
+        "file": "fonts/thinnyness.ttf"
       },
       {
         "type": "png",

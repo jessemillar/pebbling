@@ -2,16 +2,14 @@
 
 Window *g_window;
 
-static GFont *g_font_hanged;
+static GFont *g_font_thinnyness;
 static TextLayer *g_text_layer_time;
 static BitmapLayer *g_image_layer_main;
 static GBitmap *g_image_face;
 
-static void tap_handler()
+static void tap_handler(AccelAxisType axis, int32_t direction) // Switch between Finn and Jake
 {
-
-
-	layer_mark_dirty(g_image_layer_main);
+	// layer_mark_dirty(g_image_layer_main);
 }
 
 static void populate_clock(struct tm *tick_time, TimeUnits units_changed) // Initially populate the clock so the face doesn't start blank
@@ -30,11 +28,12 @@ static void window_load(Window *window)
 	bitmap_layer_set_bitmap(g_image_layer_main, g_image_face);
 	layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(g_image_layer_main));
 
-	g_font_hanged = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_HANGED_32));
+	g_font_thinnyness = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_THINNYNESS_32));
 
-	g_text_layer_time = text_layer_create(GRect(0, -10, 144, 40));
-	text_layer_set_font(g_text_layer_time, g_font_hanged);
+	g_text_layer_time = text_layer_create(GRect(0, 5, 144, 40));
+	text_layer_set_font(g_text_layer_time, g_font_thinnyness);
 	text_layer_set_text_alignment(g_text_layer_time, GTextAlignmentCenter);
+	text_layer_set_background_color(g_text_layer_time, GColorClear);
 	layer_add_child(window_get_root_layer(window), text_layer_get_layer(g_text_layer_time));
 
 	time_t time_temp = time(NULL);
@@ -46,7 +45,7 @@ static void window_unload(Window *window)
 	bitmap_layer_destroy(g_image_layer_main);
 	gbitmap_destroy(g_image_face);
 	text_layer_destroy(g_text_layer_time);
-	fonts_unload_custom_font(g_font_hanged);
+	fonts_unload_custom_font(g_font_thinnyness);
 }
 
 static void init(void)
