@@ -7,9 +7,26 @@ static TextLayer *g_text_layer_time;
 static BitmapLayer *g_image_layer_main;
 static GBitmap *g_image_face;
 
+static bool finn;
+
 static void tap_handler(AccelAxisType axis, int32_t direction) // Switch between Finn and Jake
 {
-	// layer_mark_dirty(g_image_layer_main);
+	gbitmap_destroy(g_image_face);
+
+	if (finn)
+	{
+		g_image_face = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_JAKE);
+		finn = false;
+	}
+	else
+	{
+		g_image_face = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_FINN);
+		finn = true;
+	}
+	
+	bitmap_layer_set_bitmap(g_image_layer_main, g_image_face);
+
+	layer_mark_dirty(bitmap_layer_get_layer(g_image_layer_main));
 }
 
 static void populate_clock(struct tm *tick_time, TimeUnits units_changed) // Initially populate the clock so the face doesn't start blank
@@ -62,6 +79,8 @@ static void init(void)
 
 	tick_timer_service_subscribe(MINUTE_UNIT, (TickHandler)populate_clock); // Ask for an update every minute
 	accel_tap_service_subscribe(tap_handler);
+
+	finn = true;
 }
 
 static void deinit(void)
