@@ -1,0 +1,29 @@
+{
+  "uuid": "02a18ce9-ff79-4f70-9ec7-fbaacbf478ca",
+  "shortName": "./Hacked",
+  "longName": "./Hacked",
+  "companyName": "Jesse Millar",
+  "versionCode": 1,
+  "versionLabel": "1.0",
+  "watchapp": {
+    "watchface": true
+  },
+  "appKeys": {
+    "dummy": 0
+  },
+  "resources": {
+    "media": [
+      {
+        "menuIcon": true,
+        "type": "png",
+        "name": "IMAGE_ICON",
+        "file": "images/icon.png"
+      },
+      {
+        "type": "font",
+        "name": "FONT_HACKED_35",
+        "file": "fonts/hacked.ttf"
+      }
+    ]
+  }
+}
