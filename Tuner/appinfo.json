@@ -1,0 +1,39 @@
+{
+  "uuid": "f425d4e7-3ba4-406a-b656-9d0fa15d6009",
+  "shortName": "Tuner",
+  "longName": "Tuner",
+  "companyName": "Jesse Millar",
+  "versionCode": 1,
+  "versionLabel": "1.0",
+  "watchapp": {
+    "watchface": true
+  },
+  "appKeys": {
+    "dummy": 0
+  },
+  "resources": {
+    "media": [
+      {
+        "menuIcon": true,
+        "type": "png",
+        "name": "IMAGE_ICON",
+        "file": "images/icon.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_HOURS",
+        "file": "images/hours.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_MASK",
+        "file": "images/mask.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_MINUTES",
+        "file": "images/minutes.png"
+      }
+    ]
+  }
+}
