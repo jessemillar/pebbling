@@ -1,0 +1,149 @@
+{
+  "uuid": "d35df131-18e8-4db3-87e8-a2c51c0b56ac",
+  "shortName": "Half and Half",
+  "longName": "Half and Half",
+  "companyName": "Jesse Millar",
+  "versionCode": 1,
+  "versionLabel": "1.0",
+  "watchapp": {
+    "watchface": true
+  },
+  "appKeys": {
+    "dummy": 0
+  },
+  "resources": {
+    "media": [
+      {
+        "menuIcon": true,
+        "type": "png",
+        "name": "IMAGE_ICON",
+        "file": "images/icon.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_BACKGROUND",
+        "file": "images/background.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_DIGIT_WHITE_1",
+        "file": "images/digits/white/1.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_DIGIT_WHITE_2",
+        "file": "images/digits/white/2.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_DIGIT_WHITE_3",
+        "file": "images/digits/white/3.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_DIGIT_WHITE_4",
+        "file": "images/digits/white/4.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_DIGIT_WHITE_5",
+        "file": "images/digits/white/5.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_DIGIT_WHITE_6",
+        "file": "images/digits/white/6.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_DIGIT_WHITE_7",
+        "file": "images/digits/white/7.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_DIGIT_WHITE_8",
+        "file": "images/digits/white/8.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_DIGIT_WHITE_9",
+        "file": "images/digits/white/9.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_DIGIT_WHITE_10",
+        "file": "images/digits/white/10.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_DIGIT_WHITE_11",
+        "file": "images/digits/white/11.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_DIGIT_WHITE_12",
+        "file": "images/digits/white/12.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_DIGIT_BLACK_1",
+        "file": "images/digits/black/1.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_DIGIT_BLACK_2",
+        "file": "images/digits/black/2.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_DIGIT_BLACK_3",
+        "file": "images/digits/black/3.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_DIGIT_BLACK_4",
+        "file": "images/digits/black/4.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_DIGIT_BLACK_5",
+        "file": "images/digits/black/5.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_DIGIT_BLACK_6",
+        "file": "images/digits/black/6.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_DIGIT_BLACK_7",
+        "file": "images/digits/black/7.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_DIGIT_BLACK_8",
+        "file": "images/digits/black/8.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_DIGIT_BLACK_9",
+        "file": "images/digits/black/9.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_DIGIT_BLACK_10",
+        "file": "images/digits/black/10.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_DIGIT_BLACK_11",
+        "file": "images/digits/black/11.png"
+      },
+      {
+        "type": "png",
+        "name": "IMAGE_DIGIT_BLACK_12",
+        "file": "images/digits/black/12.png"
+      }
+    ]
+  }
+}
