@@ -1,0 +1,17 @@
+{
+  "uuid": "353f869e-089e-4e38-9df0-1d0896adfdf3",
+  "shortName": "Wasted Hours",
+  "longName": "Wasted Hours",
+  "companyName": "Jesse Millar",
+  "versionCode": 1,
+  "versionLabel": "1.0",
+  "watchapp": {
+    "watchface": false
+  },
+  "appKeys": {
+    "dummy": 0
+  },
+  "resources": {
+    "media": []
+  }
+}
