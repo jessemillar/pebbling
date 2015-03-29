@@ -3,8 +3,8 @@
   "shortName": "Tuner",
   "longName": "Tuner",
   "companyName": "Jesse Millar",
-  "versionCode": 1,
-  "versionLabel": "1.0",
+  "versionCode": 1.2,
+  "versionLabel": "1.2",
   "watchapp": {
     "watchface": true
   },

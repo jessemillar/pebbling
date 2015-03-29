@@ -13,8 +13,8 @@ static GBitmap *j_bitmap_minutes;
 
 void rotate_hours(struct tm *tick_time, TimeUnits units_changed)
 {
-	rot_bitmap_layer_set_angle(j_bitmap_layer_hours, tick_time->tm_hour * TRIG_MAX_ANGLE / 12);
-	rot_bitmap_layer_set_angle(j_bitmap_layer_mask, tick_time->tm_hour * TRIG_MAX_ANGLE / 12);
+	rot_bitmap_layer_set_angle(j_bitmap_layer_hours, tick_time->tm_hour * TRIG_MAX_ANGLE / 12 + (TRIG_MAX_ANGLE / 12 / 60 * tick_time->tm_min));
+	rot_bitmap_layer_set_angle(j_bitmap_layer_mask, tick_time->tm_hour * TRIG_MAX_ANGLE / 12 + (TRIG_MAX_ANGLE / 12 / 60 * tick_time->tm_min));
 }
 
 void rotate_minutes(struct tm *tick_time, TimeUnits units_changed)
